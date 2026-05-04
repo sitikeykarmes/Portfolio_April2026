@@ -1,16 +1,70 @@
-# React + Vite
+# Kartikeyan Kumar - Developer Portfolio 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, high-performance developer portfolio built with React, Vite, and Tailwind CSS v4. It features a sleek dark-mode aesthetic, interactive canvas animations, and a fully responsive design tailored to highlight professional projects and engineering skills.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Dynamic Interactive Backgrounds**: Custom WebGL/Canvas animations (Silk waves, Shape grids, Noise grain) that react to scroll and mouse movement without blocking the main thread.
+- **Glassmorphism UI**: Beautiful, frosted-glass navigation pill and overlay elements.
+- **Responsive Layout**: Carefully tuned for desktop, tablet, and mobile devices, including a smooth mobile hamburger menu.
+- **Data-Driven Architecture**: Content is completely modularized in `src/constants/index.js` for easy updates.
+- **Modern Tech Stack**: Built with the latest tools ensuring lightning-fast load times and smooth framerates.
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework**: [React 19](https://react.dev/) + [Vite](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Animations & Graphics**: Canvas APIs, CSS Transitions
+- **Icons**: [React Icons](https://react-icons.github.io/react-icons/)
+- **Deployment**: [Vercel](https://vercel.com/) / [Netlify](https://www.netlify.com/) (Ready)
 
-## Expanding the ESLint configuration
+## 🚀 Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+To run this project locally, follow these steps:
+
+### Prerequisites
+Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/sitikeykarmes/Portfolio_April2026.git
+   cd Portfolio_April2026
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open in Browser**
+   Open [http://localhost:5173](http://localhost:5173) to view it in your browser.
+
+## 📁 Project Structure
+
+```
+src/
+├── assets/         # Static assets (images, svgs)
+├── components/     # Reusable UI components (NavBar, Canvas Effects, etc.)
+├── constants/      # Centralized data (Projects, Links, Text)
+├── sections/       # Major page sections (Hero, About, Projects, Skills, Contact)
+├── App.jsx         # Main application container
+└── index.css       # Global styles and Tailwind imports
+```
+
+## 🎨 Customization
+
+To update the portfolio with your own details:
+1. Open `src/constants/index.js`.
+2. Update the `PERSONAL`, `SOCIAL`, and `PROJECTS` arrays with your information.
+3. Replace the `resume.pdf` in the `public` folder with your own.
+
+## 📄 License
+
+This project is open-source and available under the [MIT License](LICENSE).
