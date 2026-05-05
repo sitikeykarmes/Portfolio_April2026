@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react'
-import { NAV_LINKS } from '../constants'
-import { FaBars, FaTimes } from 'react-icons/fa'
+import { NAV_LINKS, RESUME_LINK } from '../constants'
+import { FaBars, FaTimes, FaLock, FaUnlock } from 'react-icons/fa'
+import ResumeModal from './ResumeModal'
 
 const NavBar = () => {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [isResumeUnlocked, setIsResumeUnlocked] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   useEffect(() => {
     let rafId = null
@@ -88,19 +91,35 @@ const NavBar = () => {
         {/* ── Actions (Resume + Hamburger) ── */}
         <div className="flex items-center gap-3 md:gap-4">
           {/* Resume Button */}
-          <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-shrink-0 font-medium md:font-normal bg-white text-black rounded-lg hover:bg-black hover:text-white hover:scale-105 transition-all duration-300 ease-out cursor-pointer select-none whitespace-nowrap"
-            style={{
-              padding: scrolled ? '6px 14px' : '8px 20px',
-              fontSize: scrolled ? '13px' : '15px',
-              transition: 'padding 0.5s cubic-bezier(0.4, 0, 0.2, 1), font-size 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
-            }}
-          >
-            RESUME
-          </a>
+          {isResumeUnlocked ? (
+            <a
+              href={RESUME_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-shrink-0 font-medium md:font-normal bg-white text-black rounded-lg hover:bg-black hover:text-white hover:scale-105 transition-all duration-300 ease-out cursor-pointer select-none whitespace-nowrap flex items-center gap-1.5"
+              style={{
+                padding: scrolled ? '6px 14px' : '8px 20px',
+                fontSize: scrolled ? '13px' : '15px',
+                transition: 'padding 0.5s cubic-bezier(0.4, 0, 0.2, 1), font-size 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
+              }}
+            >
+              <FaUnlock size={scrolled ? 12 : 14} />
+              RESUME
+            </a>
+          ) : (
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="flex-shrink-0 font-medium md:font-normal bg-white text-black rounded-lg hover:bg-black hover:text-white hover:scale-105 transition-all duration-300 ease-out cursor-pointer select-none whitespace-nowrap flex items-center gap-1.5"
+              style={{
+                padding: scrolled ? '6px 14px' : '8px 20px',
+                fontSize: scrolled ? '13px' : '15px',
+                transition: 'padding 0.5s cubic-bezier(0.4, 0, 0.2, 1), font-size 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
+              }}
+            >
+              <FaLock size={scrolled ? 12 : 14} />
+              RESUME
+            </button>
+          )}
 
           {/* Hamburger Icon (Mobile) */}
           <button 
@@ -142,6 +161,16 @@ const NavBar = () => {
           ))}
         </ul>
       </div>
+
+      <ResumeModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onUnlock={() => {
+          setIsResumeUnlocked(true)
+          setIsModalOpen(false)
+          window.open(RESUME_LINK, '_blank')
+        }}
+      />
 
     </nav>
   )
