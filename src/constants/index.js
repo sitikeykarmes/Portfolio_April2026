@@ -62,7 +62,7 @@ export const PROJECTS = [
   }
 ]
 
-export const RESUME_LINK = 'https://drive.google.com/file/d/1ziyjCTEUz7W-dgASLRqU5o9tn-0HNViB/view?usp=sharing'
+export const RESUME_LINK = 'https://drive.google.com/file/d/1_ElTYhYIAiqq_K1rZiq4IKmwVtowd3t4/view?usp=sharing'
 
 export const RESUME_QUESTIONS = [
   {
