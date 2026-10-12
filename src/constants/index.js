@@ -17,9 +17,26 @@ export const SOCIAL = {
 
 export const NAV_LINKS = [
   { label: 'About', href: '#about' },
+  { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
   { label: 'Skills', href: '#skills' },
   { label: 'Contact', href: '#contact' },
+]
+
+export const EXPERIENCE = [
+  {
+    id: 1,
+    role: 'Graduate Engineer Trainee',
+    company: 'Tata Motors Passenger Vehicles',
+    department: 'Operations Quality - Digitalization',
+    period: 'Current',
+    // TODO: edit these points to reflect your actual work
+    points: [
+      'Part of the Operations Quality team, driving digitalization of quality processes across manufacturing operations.',
+      'Applying software, data and automation to make quality workflows faster, more traceable and less manual.',
+    ],
+    tags: ['Operations Quality', 'Digitalization', 'Manufacturing', 'Automotive'],
+  },
 ]
 
 export const PROJECT_CATEGORY_COLORS = {

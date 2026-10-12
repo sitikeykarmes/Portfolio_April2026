@@ -74,7 +74,7 @@ const ResumeModal = ({ isOpen, onClose, onUnlock }) => {
       
       {/* Modal */}
       <div 
-        className="relative w-full max-w-lg bg-[#111111] border border-white/10 rounded-2xl p-6 md:p-8 shadow-2xl animate-in fade-in zoom-in-95 duration-300"
+        className="relative w-full max-w-lg bg-[#0a1220] border border-white/10 rounded-2xl p-6 md:p-8 shadow-2xl animate-in fade-in zoom-in-95 duration-300"
         onClick={e => e.stopPropagation()}
       >
         <button 

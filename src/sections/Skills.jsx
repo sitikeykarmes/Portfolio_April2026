@@ -1,3 +1,4 @@
+import SectionLabel from '../components/SectionLabel'
 import LogoLoop from '../components/LogoLoop'
 import {
   SiReact,
@@ -39,12 +40,10 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="relative w-full py-16 bg-[#080808] border-t border-white/5"
+      className="relative w-full py-16 bg-[#060910] border-t border-white/5"
     >
       <div className="w-full max-w-7xl mx-auto px-12 mb-10">
-        <span className="text-white/40 text-sm font-medium tracking-[0.3em] uppercase">
-          Tech Stack
-        </span>
+        <SectionLabel index="04">Tech Stack</SectionLabel>
       </div>
 
       <div className="w-full h-[160px] relative overflow-hidden text-white/50 flex items-center">
@@ -58,7 +57,7 @@ const Skills = () => {
           hoverSpeed={20}
           scaleOnHover={true}
           fadeOut={true}
-          fadeOutColor="#080808"
+          fadeOutColor="#060910"
           ariaLabel="Tech Stack"
         />
       </div>

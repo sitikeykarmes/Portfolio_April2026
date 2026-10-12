@@ -1,4 +1,9 @@
+import GhostText from '../components/GhostText'
+import ParallaxLayer from '../components/ParallaxLayer'
+import SectionLabel from '../components/SectionLabel'
 import Noise from '../components/Noise'
+import SpotlightCard from '../components/SpotlightCard'
+import Reveal from '../components/Reveal'
 import { PROJECTS, PROJECT_CATEGORY_COLORS } from '../constants'
 
 
@@ -6,7 +11,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="relative w-full min-h-screen bg-[#080808] overflow-hidden py-24"
+      className="relative w-full min-h-screen bg-[#060910] overflow-hidden py-24"
     >
       {/* ── Noise grain texture ── */}
       <Noise
@@ -17,33 +22,32 @@ const Projects = () => {
         patternAlpha={18}
       />
 
+      <div className="pointer-events-none absolute inset-0 bg-circuit" />
+      <GhostText className="top-4" speed={-0.6}>Projects</GhostText>
+      <ParallaxLayer speed={0.8} className="pointer-events-none absolute -right-40 top-20">
+        <div className="h-[420px] w-[420px] rounded-full bg-[#8b7bff]/15 blur-[120px]" />
+      </ParallaxLayer>
+      <ParallaxLayer speed={-0.5} className="pointer-events-none absolute -left-40 bottom-10">
+        <div className="h-[380px] w-[380px] rounded-full bg-[#38e1ff]/10 blur-[120px]" />
+      </ParallaxLayer>
+
       {/* ── Content ── */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-12">
 
         {/* Header */}
         <div className="mb-16">
-          <span className="text-white/40 text-sm font-medium tracking-[0.3em] uppercase">
-            My Work
-          </span>
-          <h2 className="mt-3 text-5xl lg:text-6xl font-bold text-white leading-tight">
+          <SectionLabel index="03">Projects</SectionLabel>
+          <h2 className="mt-4 text-5xl lg:text-6xl font-bold text-white leading-tight">
             Projects
-            <span className="text-[#c18556]">.</span>
+            <span className="text-[#38e1ff]">.</span>
           </h2>
         </div>
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {PROJECTS.map((project) => (
-            <div
-              key={project.id}
-              className="
-                group relative flex flex-col
-                bg-white/[0.03] border border-white/[0.08]
-                rounded-2xl p-6 overflow-hidden
-                hover:bg-white/[0.06] hover:border-[#c18556]/40
-                transition-all duration-400
-              "
-            >
+          {PROJECTS.map((project, idx) => (
+            <Reveal key={project.id} delay={0.12 * idx} className="h-full">
+            <SpotlightCard className="group h-full" contentClassName="flex flex-col p-6">
               {/* Top row — category + links */}
               <div className="flex items-center justify-between mb-4">
                 <span
@@ -86,7 +90,7 @@ const Projects = () => {
               </div>
 
               {/* Title */}
-              <h3 className="text-white text-xl font-semibold mb-3 group-hover:text-[#c18556] transition-colors">
+              <h3 className="text-white text-xl font-semibold mb-3 group-hover:text-[#38e1ff] transition-colors">
                 {project.title}
               </h3>
 
@@ -106,7 +110,8 @@ const Projects = () => {
                   </span>
                 ))}
               </div>
-            </div>
+            </SpotlightCard>
+            </Reveal>
           ))}
         </div>
 
@@ -119,7 +124,7 @@ const Projects = () => {
             className="
               inline-flex items-center gap-3 px-6 py-3
               bg-white/5 border border-white/10 rounded-full
-              text-white/70 font-medium hover:text-[#c18556] hover:bg-[#c18556]/10 hover:border-[#c18556]/30
+              text-white/70 font-medium hover:text-[#38e1ff] hover:bg-[#38e1ff]/10 hover:border-[#38e1ff]/30
               transition-all duration-300
             "
           >

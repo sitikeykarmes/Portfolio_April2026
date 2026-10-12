@@ -59,7 +59,7 @@ const NavBar = () => {
           onClick={() => setMenuOpen(false)}
         >
           <span className="text-white/70 -translate-y-0.5 inline-block">&lt;</span>
-          <span className="text-white/90">Kartikeyan Kr</span>
+          <span className="text-white/90 font-mono text-base md:text-lg">Kartikeyan<span className="text-[#38e1ff]">.dev</span></span>
           <span className="text-white/70 -translate-y-0.5 inline-block">/&gt;</span>
         </a>
 
